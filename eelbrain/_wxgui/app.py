@@ -2,6 +2,10 @@ from __future__ import print_function
 import webbrowser
 
 import wx
+try:  # classic
+    from wx import TaskBarIcon, TBI_DOCK
+except ImportError:  # Phoenix
+    from wx.adv import TaskBarIcon, TBI_DOCK
 
 from .._wxutils import ID, Icon
 from .about import AboutFrame
@@ -552,10 +556,10 @@ def run():
         app.MainLoop()
 
 
-class DockIcon(wx.TaskBarIcon):
+class DockIcon(TaskBarIcon):
     # http://stackoverflow.com/a/38249390/166700
     def __init__(self, app):
-        wx.TaskBarIcon.__init__(self, iconType=wx.TBI_DOCK)
+        TaskBarIcon.__init__(self, iconType=TBI_DOCK)
         self.app = app
 
         # Set the image
