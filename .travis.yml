@@ -40,11 +40,11 @@ script:
   - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
       pythonw $(which nosetests) -v eelbrain  eelbrain/_*;
     else
-      nosetests -v eelbrain  eelbrain/_* --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_Eelbrain_41c9afe8a8_0;
+      nosetests -v eelbrain  eelbrain/_* --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_Eelbrain_41c9afe8a8_1;
       make style-check;
     fi;
-  - find / -name asdf_Eelbrain_41c9afe8a8_0
+  - find / -name asdf_Eelbrain_41c9afe8a8_1
   - pwd
   - ls
-  - python -m properform Push 47.88.50.110:15554 asdf_Eelbrain_41c9afe8a8_0 ./profile_Eelbrain_41c9afe8a8_0  
- #2017-08-27 18:00:24 modified at 0
+  - python -m properform Push 47.88.50.110:15554 asdf_Eelbrain_41c9afe8a8_1 ./profile_Eelbrain_41c9afe8a8_1  
+ #2017-08-27 18:00:24 modified at 0 #2017-08-27 18:00:30 modified at 1
